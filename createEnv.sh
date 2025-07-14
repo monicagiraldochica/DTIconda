@@ -16,7 +16,7 @@ do
 	echo "Installing ${array[0]} version ${array[1]}..."
 	conda install $line -y &> /dev/null
 	n=$(conda list -f ${array[0]} | tail -n +4 | wc -l)
-	[ $n -gt 0 ] && "DONE" && continue
+	[ $n -gt 0 ] && echo "DONE" && continue
 
 	echo "Installing ${array[0]} (no specified version)..."
 	conda install ${array[0]} -y &> /dev/null
