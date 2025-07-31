@@ -7,30 +7,29 @@ module load miniforge
 #conda env create -f fsl-6.0.7_linux-64_edited.yml
 
 # Check FSL installation
-# Checked but need to re-run to make sure that trying to remove libpng didn't screw with any of the current software
 conda activate DTIconda
 
-rm -f installed.txt NOTinstalled.txt
-f=$(python3 readFSLyml.py)
-for line in $f
-do
-	IFS='=' read -a array <<< $line
-	n=$(conda list -f ${array[0]} | tail -n +4 | wc -l)
-	if [ $n -gt 0 ]
-	then
-                echo "${array[0]} installed"
-                echo $line >> installed.txt
-        else
-		echo "${array[0]} NOT installed"
-		echo $line >> NOTinstalled.txt
-        fi
-done
+#rm -f installed.txt NOTinstalled.txt
+#f=$(python3 readFSLyml.py)
+#for line in $f
+#do
+#	IFS='=' read -a array <<< $line
+#	n=$(conda list -f ${array[0]} | tail -n +4 | wc -l)
+#	if [ $n -gt 0 ]
+#	then
+#                echo "${array[0]} installed"
+#                echo $line >> installed.txt
+#        else
+#		echo "${array[0]} NOT installed"
+#		echo $line >> NOTinstalled.txt
+#        fi
+#done
 
 # Install ANTS
 #conda install conda-forge::ants
 
 # Install dcmtk
-#conda install bioconda::dcmtk
+conda install bioconda::dcmtk
 
 # Install dcm2niix
 #conda install conda-forge::dcm2niix
