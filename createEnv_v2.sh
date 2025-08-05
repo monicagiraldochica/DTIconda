@@ -29,10 +29,10 @@ conda activate DTIconda
 #conda install conda-forge::ants
 
 # Install dcmtk
-conda install bioconda::dcmtk
+#conda install bioconda::dcmtk
 
 # Install dcm2niix
-#conda install conda-forge::dcm2niix
+conda install conda-forge::dcm2niix
 
 # Install Connectome Workbench
 #conda install bioconda::connectome-workbench
