@@ -36,6 +36,3 @@ conda install conda-forge::dcm2niix
 
 # Install MRtrix3
 conda install mrtrix3::mrtrix3
-
-# Install AFNI
-conda install hcc::afni
